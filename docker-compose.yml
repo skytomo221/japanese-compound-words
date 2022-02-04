@@ -1,0 +1,22 @@
+version: '3'
+services:
+  corpus:
+    build:
+      context: .
+      target: corpus
+    volumes:
+      - ./data:/workspace
+    command: /bin/bash
+  wikiextractor:
+    build:
+      context: .
+      target: wikiextractor
+    volumes:
+      - ./data:/workspace
+  generator:
+    build:
+      context: .
+      target: generator
+    volumes:
+      - ./data:/data
+      - ./src:/workspace
