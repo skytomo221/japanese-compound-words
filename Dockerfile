@@ -8,7 +8,7 @@ RUN curl https://dumps.wikimedia.org/jawiki/${jawiki_revision}/jawiki-${jawiki_r
 WORKDIR /workspace
 CMD [ "mv", "/jawiki.xml.bz2", "." ]
 
-FROM python:latest AS wikiextractor
+FROM python:3.10 AS wikiextractor
 
 WORKDIR /workspace
 
